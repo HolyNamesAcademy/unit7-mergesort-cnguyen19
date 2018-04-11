@@ -14,7 +14,11 @@ public class Main {
      * @param arrayList the ArrayList to be sorted. arrayList cannot contain duplicates
      */
     public static void selectionSort(ArrayList<Integer> arrayList) {
-        throw new UnsupportedOperationException("SelectionSort() has not been implemented yet");
+       if(arrayList == null)
+           return;
+       for(int j = 0; j < arrayList.size(); j++){
+           int smallIndex = getMinIndex(arrayList, j);
+       }
     }
 
     /**
@@ -44,7 +48,7 @@ public class Main {
      * @param arrayList the ArrayList to be sorted. arrayList cannot contain duplicates
      */
     public static void mergeSort(ArrayList<Integer> arrayList) {
-        throw new UnsupportedOperationException("mergeSort() has not been implemented yet");
+        sort(arrayList, 0, arrayList.size());
     }
 
     /**
