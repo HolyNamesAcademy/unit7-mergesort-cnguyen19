@@ -14,11 +14,6 @@ public class Main {
      * @param arrayList the ArrayList to be sorted. arrayList cannot contain duplicates
      */
     public static void selectionSort(ArrayList<Integer> arrayList) {
-       if(arrayList == null)
-           return;
-       for(int j = 0; j < arrayList.size(); j++){
-           int smallIndex = getMinIndex(arrayList, j);
-       }
     }
 
     /**
@@ -61,7 +56,10 @@ public class Main {
      * @param hi the index of the last element in the range + 1.
      */
     public static void sort(ArrayList<Integer> arrayList, int lo, int hi) {
-        throw new UnsupportedOperationException("sort() has not been implemented yet");
+       if(arrayList.size() > 1) {
+           ArrayList<Integer> a1 = new ArrayList<>();
+           ArrayList<Integer> a2 = new ArrayList<>();
+       }
     }
 
     /**
