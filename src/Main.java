@@ -56,10 +56,14 @@ public class Main {
      * @param hi the index of the last element in the range + 1.
      */
     public static void sort(ArrayList<Integer> arrayList, int lo, int hi) {
-       if(arrayList.size() > 1) {
-           ArrayList<Integer> a1 = new ArrayList<>();
-           ArrayList<Integer> a2 = new ArrayList<>();
-       }
+        if(hi - lo <= 1) {
+            return;
+        }
+        int mid = (hi + lo) / 2;
+        sort(arrayList, lo, mid);
+        sort(arrayList, mid, hi);
+        merge(arrayList, lo, mid, hi);
+
     }
 
     /**
@@ -73,6 +77,28 @@ public class Main {
      * @param hi the index of the last element in the second range + 1.
      */
     public static void merge(ArrayList<Integer> arrayList, int lo, int mid, int hi) {
-        throw new UnsupportedOperationException("merge() has not been implemented yet");
+        ArrayList<Integer>tempArray = new ArrayList<Integer>();
+
+        int i = lo;
+        int j = mid;
+        while(i < mid || j < hi)
+        {
+            if(j == hi){
+                tempArray.add(arrayList.get(i));
+                i++;
+            }
+            else if(i == mid){
+                tempArray.add(arrayList.get(j));
+                j++;
+            }
+            else if(arrayList.get(j) > arrayList.get(i)){
+                tempArray.add(arrayList.get(j));
+                j++;
+            }
+            else{
+                tempArray.add(arrayList.get(i));
+                i++;
+            }
+        }
     }
 }
